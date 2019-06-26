@@ -8,8 +8,9 @@ import (
 	"os"
 
 	"github.com/gomarkdown/markdown"
-	"github.com/gomarkdown/markdown/ast"
 	"github.com/gomarkdown/markdown/parser"
+
+	"github.com/cloudfoundry-community/capiclientgen/pkg/v3"
 )
 
 // Parse the V3 API docs
@@ -20,18 +21,30 @@ func usageAndExit() {
 	os.Exit(1)
 }
 
+func filenameToResourceName(filename string) string {
+	// get the leaf level dir name
+	d := strings.TrimSuffix(filename, filepath.Base(filename))
+	return filepath.Base(d)
+}
+
 func processMarkdownFile(filename string) error {
 	d, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return fmt.Errorf("Couldn't open markdown file '%s', error: '%s'", filename, err)
 	}
 
+	v3ApiRendererOpts := v3.RendererOptions{
+		ResourceName: filenameToResourceName(filename),
+	}
+	v3ApiRenderer := v3.NewRenderer(v3ApiRendererOpts)
 	exts := parser.CommonExtensions // parser.OrderedListStart | parser.NoEmptyLineBeforeBlock
 	p := parser.NewWithExtensions(exts)
 	doc := markdown.Parse(d, p)
-	fmt.Printf("AST of file '%s':\n", filename)
-	ast.PrintWithPrefix(os.Stdout, doc, " ")
-	fmt.Print("\n")
+	markdown.Render(doc, v3ApiRenderer)
+
+	// fmt.Printf("AST of file '%s':\n", filename)
+	// ast.PrintWithPrefix(os.Stdout, doc, " ")
+	// fmt.Print("\n")
 
 	return nil
 }
