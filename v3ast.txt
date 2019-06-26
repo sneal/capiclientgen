@@ -1,0 +1,10156 @@
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/_header.md':
+Heading
+ Text 'Resources'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_create.md.erb':
+Heading
+ Text 'Create an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/apps'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the app.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'A relationship to a space.'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'environment_variables'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'Environment variables to be used for ...'
+   TableCell
+    Text
+    Code '{}'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'lifecycle'
+   TableCell
+    Text
+    Link 'url=#the-lifecycle-object'
+     Text
+     Emph
+      Text 'lifecycle object'
+   TableCell
+    Text 'Provides the lifecycle object for the...'
+   TableCell
+    Text
+    Link 'url=#buildpack-lifecycle-object'
+     Text 'buildpack lifecycle'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the app.'
+   TableCell
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the app.'
+   TableCell
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_current_droplet.md.erb':
+Heading
+ Text 'Set current droplet'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Set the current droplet for an app. T...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/apps/:guid/relationships/cu...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_delete.md.erb':
+Heading
+ Text 'Delete an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 Accepted\nLocation: http...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/apps/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_env.md.erb':
+Heading
+ Text 'Get environment for an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve the environment variables th...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/env'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_environment_variables.md.erb':
+Heading
+ Text 'Get environment variables for an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve the environment variables th...'
+ Link 'url=#get-environment-for-an-app'
+  Text 'env endpoint'
+ Text '.'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/environment_variab...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_get.md.erb':
+Heading
+ Text 'Get an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'include'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- Optionally include additional rela...'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'space'
+    Text ','
+    Code 'org'
+    Text 'or'
+    Code 'space,org'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_get_current_droplet.md.erb':
+Heading
+ Text 'Get current droplet'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/droplets/current'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_get_current_droplet_relationship.md.erb':
+Heading
+ Text 'Get current droplet association for a...'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint retrieves the current d...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/relationships/curr...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_header.md':
+Heading
+ Text 'Apps'
+Paragraph
+ Text 'Apps are top-level objects that link ...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_list.md.erb':
+Heading
+ Text 'List apps'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all apps the user has access...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app guids to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app names to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space guids t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text ','
+    Code 'name'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'include'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- Optionally include a list of uniqu...'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'space'
+    Text 'and'
+    Code 'org'
+    Text ', and are separated by a'
+    Code ','
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_object.md.erb':
+Heading
+ Text 'The app object'
+CodeBlock 'Example App object\n'
+CodeBlock '<%= yield_content :single_app %>\n'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the app.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Current desired state of the app. Val...'
+    Code 'STOPPED'
+    Text 'or'
+    Code 'STARTED'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'lifecycle'
+   TableCell
+    Text
+    Link 'url=#the-lifecycle-object'
+     Text
+     Emph
+      Text 'lifecycle object'
+   TableCell
+    Text 'Provides the lifecycle object for the...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the app.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'The space the app is contained in.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the app.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations added to the app.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_start.md.erb':
+Heading
+ Text 'Start an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/apps/:guid/actions/start'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_stop.md.erb':
+Heading
+ Text 'Stop an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/apps/:guid/actions/stop'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_update.md.erb':
+Heading
+ Text 'Update an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/apps/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the app.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'lifecycle'
+   TableCell
+    Text
+    Link 'url=#the-lifecycle-object'
+     Text
+     Emph
+      Text 'lifecycle object'
+   TableCell
+    Text 'Lifecycle to be used when updating th...'
+    Code 'data'
+    Text 'is a required field in lifecycle if ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the app.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the app.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/apps/_update_environment_variables.md.erb':
+Heading
+ Text 'Update environment variables for an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Update the environment variables asso...'
+ Code 'null'
+ Text 'will be removed from the app.\nEnvir...'
+HTMLBlock '<aside class="notice">The updated env...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/apps/:guid/environment_vari...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_create.md.erb':
+Heading
+ Text 'Create a buildpack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/buildpacks'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the buildpack.'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'stack'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The name of the stack that the buildp...'
+   TableCell
+    Text 'null'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'position'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The order in which the buildpacks are...'
+   TableCell
+    Text '1'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'enabled'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether or not the buildpack will be ...'
+   TableCell
+    Text 'true'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'locked'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether or not the buildpack is locke...'
+   TableCell
+    Text 'false'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the buildpack.'
+   TableCell
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the buildpack.'
+   TableCell
+Heading
+ Text 'Permitted Roles'
+CodeBlock '|\n'
+Paragraph
+ Text '----- | ---\nAdmin |'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_delete.md':
+Heading
+ Text 'Delete a buildpack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 Accepted\nLocation: http...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/buildpacks/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_get.md.erb':
+Heading
+ Text 'Get a buildpack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/buildpacks/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_header.md':
+Heading
+ Text 'Buildpacks'
+Paragraph
+ Text 'Buildpacks are used during a'
+ Link 'url=#builds'
+  Text 'build'
+ Text '\nto download external dependencies\n...'
+ Link 'url=#packages'
+  Text 'package'
+ Text '\ninto an executable'
+ Link 'url=#droplets'
+  Text 'droplet'
+ Text '.\nIn this way, buildpacks are a plug...'
+ Link 'url=#apps'
+  Text 'apps'
+ Text 'and'
+ Link 'url=#builds'
+  Text 'builds'
+ Text '.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_list.md.erb':
+Heading
+ Text 'List buildpacks'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all buildpacks the user has ...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/buildpacks'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of buildpack nam...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'stacks'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of stack names t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text ', and'
+    Code 'position'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_object.md.erb':
+Heading
+ Text 'The buildpack object'
+CodeBlock 'Example Buildpack object\n'
+CodeBlock '<%= yield_content :single_buildpack %...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the buildpack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The name of the buildpack. To be used...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The state of the buildpack. Valid val...'
+    Code 'AWAITING_UPLOAD'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'filename'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The filename of the buildpack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'stack'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The name of the stack that the buildp...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'position'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The order in which the buildpacks are...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'enabled'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether or not the buildpack can be u...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'locked'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether or not the buildpack is locke...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_update.md.erb':
+Heading
+ Text 'Update a buildpack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/buildpacks/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the buildpack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'stack'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The name of the stack that the buildp...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'position'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The order in which the buildpacks are...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'enabled'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether or not the buildpack will be ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'locked'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether or not the buildpack is locke...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the buildpack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the buildpack.'
+Heading
+ Text 'Permitted Roles'
+CodeBlock '|\n'
+Paragraph
+ Text '----- | ---\nAdmin |'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/buildpacks/_upload_bits.md.erb':
+Heading
+ Text 'Upload buildpack bits'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Upload a zip file containing a Cloud ...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/buildpacks/:guid/upload'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'bits'
+   TableCell
+    Text
+    Emph
+     Text 'form field'
+   TableCell
+    Text 'A binary zip file containing the buil...'
+Heading
+ Text 'Permitted Roles'
+CodeBlock '|\n'
+Paragraph
+ Text '----- | ---\nAdmin |'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/builds/_create.md.erb':
+Heading
+ Text 'Create a build'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/builds'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'package'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'App package to stage.'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'lifecycle'
+   TableCell
+    Text
+    Link 'url=#the-lifecycle-object'
+     Text
+     Emph
+      Text 'lifecycle object'
+   TableCell
+    Text 'Lifecycle information for a build.'
+   TableCell
+    Text 'lifecycle on the app'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the build.'
+   TableCell
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the build.'
+   TableCell
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/builds/_get.md.erb':
+Heading
+ Text 'Get a build'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/builds/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/builds/_header.md':
+Heading
+ Text 'Builds'
+Paragraph
+ Text 'Builds represent the process of stagi...'
+ Link 'url=#lifecycles'
+  Text 'lifecycles'
+ Text ') of builds: buildpack and docker.'
+Paragraph
+ Text 'After an'
+ Link 'url=#apps'
+  Text 'application'
+ Text 'is created and'
+ Link 'url=#packages'
+  Text 'packages'
+ Text 'are uploaded, a build\nresource can ...'
+ Text '\n'
+ Link 'url=#droplets'
+  Text 'droplet'
+ Text '.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/builds/_list.md.erb':
+Heading
+ Text 'List builds'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all builds the user has acce...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/builds'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of build states ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app guids to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'package_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of package guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/builds/_list_for_app.md.erb':
+Heading
+ Text 'List builds for an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all builds for the app.'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/[guid]/builds'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of build states ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/builds/_object.md.erb':
+Heading
+ Text 'The build object'
+CodeBlock 'Example Build object\n'
+CodeBlock '<%= yield_content :single_staged_buil...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'State of the build. Valid states are'
+    Code 'STAGING'
+    Text ','
+    Code 'STAGED'
+    Text ', or'
+    Code 'FAILED'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'error'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'A string describing errors during the...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'lifecycle'
+   TableCell
+    Text
+    Link 'url=#the-lifecycle-object'
+     Text
+     Emph
+      Text 'lifecycle object'
+   TableCell
+    Text 'An object describing the lifecycle th...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'package'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'The package that is the input to the ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'droplet'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'A resulting droplet from the staging ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the build.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the build was...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the build was...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_by'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'The user that created the build.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the build.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the build.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/builds/_update.md.erb':
+Heading
+ Text 'Update a build'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/buil...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/builds/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the build.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the build.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_copy.md.erb':
+Heading
+ Text 'Copy a droplet'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/drop...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Paragraph
+ Text 'Copy a droplet to a different app. Th...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/droplets?source_guid=:guid'
+Heading
+ Text 'Required Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'source_guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Source guid of the droplet to be copi...'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'A relationship to the destination app.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_create.md.erb':
+Heading
+ Text 'Create a droplet (experimental)'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/drop...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Paragraph
+ Text 'This endpoint is only for creating a ...'
+ Link 'url=#create-a-build'
+  Text 'Create a build'
+ Text '.'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/droplets'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'App to create droplet for.'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'process_types'
+   TableCell
+    Text
+    Emph
+     Text 'hash'
+   TableCell
+    Text 'Process names and start commands for ...'
+   TableCell
+    Text
+    Code '{"web": ""}'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_delete.md':
+Heading
+ Text 'Delete a droplet'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/drop...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 Accepted\nLocation: http...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/droplets/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_get.md.erb':
+Heading
+ Text 'Get a droplet'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/drop...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/droplets/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_header.md':
+Heading
+ Text 'Droplets'
+Paragraph
+ Text 'Droplets are the result of staging an...'
+Paragraph
+ Text 'After an application is created and p...'
+ Link 'url=#builds'
+  Text 'build'
+ Text 'in order for an application to be de...'
+ Text '\nThe current droplet'
+ Link 'url=#set-current-droplet-for-an-app'
+  Text 'must be assigned'
+ Text 'to an'
+ Text '\napplication before it may be starte...'
+ Link 'url=#create-a-task'
+  Text 'tasks are created'
+ Text ','
+ Text '\nthey either use a specific droplet ...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_list.md.erb':
+Heading
+ Text 'List droplets'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/drop...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all droplets the user has ac...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/droplets'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of droplet guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of droplet state...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app guids to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space guids t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text 'and'
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_list_for_app.md.erb':
+Heading
+ Text 'List droplets for an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve a list of droplets belonging...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/droplets'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of droplet guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of droplet state...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'current'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'If true, only include the droplet cur...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text 'and'
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_list_for_package.md.erb':
+Heading
+ Text 'List droplets for a package'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve a list of droplets belonging...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/packages/:guid/droplets'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of droplet guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of droplet state...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text 'and'
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_object.md.erb':
+Heading
+ Text 'The droplet object'
+CodeBlock 'Example Droplet object\n'
+CodeBlock '<%= yield_content :single_staged_buil...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'State of the droplet. Valid states are'
+    Code 'STAGED'
+    Text ','
+    Code 'COPYING'
+    Text ','
+    Code 'FAILED'
+    Text ', or'
+    Code 'EXPIRED'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'error'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'A string describing the last error du...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'lifecycle'
+   TableCell
+    Text
+    Link 'url=#the-lifecycle-object'
+     Text
+     Emph
+      Text 'lifecycle object'
+   TableCell
+    Text 'An object describing the lifecycle th...'
+    Strong
+     Text 'lifecycle.data'
+    Text 'will always be an empty hash for a d...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the droplet.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'execution_metadata'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Serialized JSON data resulting from s...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'process_types'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'The process types (keys) and associat...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'labels object'
+   TableCell
+    Text 'Labels on the droplet'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotations object'
+   TableCell
+    Text 'Annotations on the droplet'
+Paragraph
+ Text 'In addition to these fields, a drople...'
+ Code 'null'
+ Text 'by default and will contain values w...'
+ Strong
+  Text 'lifecycle.type'
+ Text '.'
+Heading
+ Text 'Buildpack droplet'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'checksum.type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Hashing algorithm for checksum. Suppo...'
+    Code 'sha256'
+    Text 'and'
+    Code 'sha1'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'checksum.value'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Checksum of droplet.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'buildpacks'
+   TableCell
+    Text
+    Emph
+     Text 'array of'
+     Link 'url=#detected-buildpack-object'
+      Text 'detected buildpack objects'
+   TableCell
+    Text 'Detected buildpacks from the staging ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'stack'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The root filesystem to use with the b...'
+    Code 'cflinuxfs3'
+Heading
+ Text 'Detected buildpack object'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'System buildpack name'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'detect_output'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Output during buildpack detect process'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'buildpack_name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name reported by the buildpack'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'version'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Version reported by the buildpack'
+Heading
+ Text 'Docker droplet'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'image'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Docker image name.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/droplets/_update.md.erb':
+Heading
+ Text 'Update a droplet'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.space/v3/dr...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/droplets/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the droplet.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the droplet.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'OrgManager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'SpaceDeveloper'
+   TableCell
+  TableRow
+   TableCell
+    Text 'SpaceManager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/feature_flags/_flags.md.erb':
+Heading
+ Text 'List of feature flags'
+Paragraph
+ Text '<% feature_flags = [\n["app_bits_uplo...'
+ HTMLSpan '<br>'
+ Text '1) Enable the'
+ Code '/ids/users/'
+ Text 'endpoint for UAA'
+ HTMLSpan '<br>'
+ Text '2) Create a UAA'
+ Code 'cloud_controller_username_lookup'
+ Text 'client with the'
+ Code 'scim.userids'
+ Text 'authority"],\n["space_developer_env_...'
+ HTMLSpan '<br>'
+ Text '1) Enable the'
+ Code '/ids/users/'
+ Text 'endpoint for UAA'
+ HTMLSpan '<br>'
+ Text '2) Create a UAA'
+ Code 'cloud_controller_username_lookup'
+ Text 'client with the'
+ Code 'scim.userids'
+ Text 'authority"],\n["user_org_creation", ...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text '<% feature_flags.each do'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'Name:'
+    Text
+    Code '<%= feature_flag_name %>'
+    Text
+    HTMLSpan '<br>'
+    Text
+    Strong
+     Text 'Default:'
+    Text
+    Code '<%= feature_flag_default %>'
+    Text
+    HTMLSpan '<br>'
+    Text
+    Strong
+     Text 'Description:'
+    Text '<%= feature_flag_description %>'
+Paragraph
+ Text '<% end %>'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/feature_flags/_get.md.erb':
+Heading
+ Text 'Get a feature flag'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/feat...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/feature_flags/:name'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/feature_flags/_header.md':
+Heading
+ Text 'Feature Flags'
+Paragraph
+ Text 'Feature flags are runtime flags that ...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/feature_flags/_list.md.erb':
+Heading
+ Text 'List feature flags'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/feat...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all feature_flags.'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/feature_flags'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to'
+    Code 'name'
+    Text 'ascending. Prepend with'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid value is'
+    Code 'name'
+    Text '.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/feature_flags/_object.md.erb':
+Heading
+ Text 'The feature flag object'
+CodeBlock 'Example Feature Flag object\n'
+CodeBlock '<%= yield_content :single_feature_fla...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The name of the feature flag.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'enabled'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether the feature flag is enabled.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'custom_error_message'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The error string returned by the API ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/feature_flags/_update.md.erb':
+Heading
+ Text 'Update a feature flag'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/feat...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/feature_flags/:name'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'enabled'
+   TableCell
+    Text
+    Emph
+     Text 'boolean'
+   TableCell
+    Text 'Whether the feature flag is enabled.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'custom_error_message'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The error string returned by the API ...'
+Heading
+ Text 'Permitted Roles'
+CodeBlock '|\n'
+Paragraph
+ Text '----- | ---\nAdmin |'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_assign.md.erb':
+Heading
+ Text 'Entitle organizations for an isolatio...'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint entitles the specified ...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/isolation_segments/:guid/rel...'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data'
+   TableCell
+    Text
+    Link 'url=#to-many-relationships'
+     Text
+     Emph
+      Text 'to-many relationship'
+   TableCell
+    Text 'Organization relationships. Each orga...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_create.md.erb':
+Heading
+ Text 'Create an isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/isolation_segments'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the Isolation Segment.  Isola...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the isolation segme...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the isolation ...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_delete.md.erb':
+Heading
+ Text 'Delete an isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 204 No Content\n'
+Paragraph
+ Text 'An isolation segment cannot be delete...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/isolation_segments/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_get.md.erb':
+Heading
+ Text 'Get an isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/isolation_segments/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_header.md':
+Heading
+ Text 'Isolation Segments'
+Paragraph
+ Text 'Isolation Segments provide dedicated ...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_list.md.erb':
+Heading
+ Text 'List isolation segments'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieves all isolation segments to w...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/isolation_segments'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of isolation seg...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of isolation seg...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text ', and'
+    Code 'name'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_list_organizations.md.erb':
+Heading
+ Text 'List organizations relationship'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint lists the organizations...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/isolation_segments/:guid/rela...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_list_spaces.md.erb':
+Heading
+ Text 'List spaces relationship'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint lists the spaces to whi...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/isolation_segments/:guid/rela...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_object.md.erb':
+Heading
+ Text 'The isolation segment object'
+CodeBlock 'Example Isolation Segment object\n'
+CodeBlock '<%= yield_content :single_isolation_s...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the isolation segment.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the isolation s...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'labels object'
+   TableCell
+    Text 'Labels on the isolation segment'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotations object'
+   TableCell
+    Text 'Annotations on the isolation segment'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_unassign.md.erb':
+Heading
+ Text 'Revoke entitlement to isolation segme...'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 204 No Content\n'
+Paragraph
+ Text 'This endpoint revokes the entitlement...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/isolation_segments/:guid/r...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/isolation_segments/_update.md.erb':
+Heading
+ Text 'Update an isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/isolation_segments/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the Isolation Segment.  Isola...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the isolation segme...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the isolation ...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/jobs/_get.md.erb':
+Heading
+ Text 'Get a job'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/jobs...'
+CodeBlock 'Completed Job Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+CodeBlock 'Failed Job Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/jobs/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/jobs/_header.md':
+Heading
+ Text 'Jobs'
+Paragraph
+ Text 'Jobs are created by the platform when...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/jobs/_object.md.erb':
+Heading
+ Text 'The job object'
+CodeBlock 'Example Job object\n'
+CodeBlock '<%= yield_content :single_complete_jo...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the job.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'operation'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Current desired operation of the job ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'State of the job. Valid values are'
+    Code 'PROCESSING'
+    Text ','
+    Code 'COMPLETE'
+    Text ', or'
+    Code 'FAILED'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'errors'
+   TableCell
+    Text
+    Link 'url=#errors'
+     Text
+     Emph
+      Text 'errors list'
+   TableCell
+    Text 'Array of errors that occurred while p...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_assign_default_isolation_segment.md.erb':
+Heading
+ Text 'Assign default isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/orga...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Set the default isolation segment for...'
+HTMLBlock '<aside class="notice">Apps will not r...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/organizations/:guid/relatio...'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'Isolation segment relationship. Apps ...'
+    Code 'null'
+    Text 'to remove the relationship.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_create.md.erb':
+Heading
+ Text 'Create an organization'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/orga...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/organizations'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Organization name'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the organization.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the organizati...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+Paragraph
+ Text 'If the'
+ Code 'user_org_creation'
+ Text 'feature flag is enabled, any user wi...'
+ Code 'cloud_controller.write'
+ Text 'scope will be able to create organiz...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_get_an_organization.md.erb':
+Heading
+ Text 'Get an organization'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/orga...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint retrieves the specified...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/organizations/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_get_default_domain.md.erb':
+Heading
+ Text 'Get default domain'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/orga...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve the default domain for a giv...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/organizations/:guid/domains/d...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Roles'
+   TableCell
+    Text 'Notes'
+ TableBody
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Billing Manager'
+   TableCell
+    Text 'Can only view domains without an orga...'
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_get_default_isolation_segment.md.erb':
+Heading
+ Text 'Get default isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/orga...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve the default isolation segmen...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/organizations/:guid/relations...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_header.md':
+Heading
+ Text 'Organizations'
+Paragraph
+ Text 'An org is a development account that ...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_list.md.erb':
+Heading
+ Text 'List organizations'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/orga...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all organizations the user h...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/organizations'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text ', and'
+    Code 'name'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_list_for_isolation_segment.md.erb':
+Heading
+ Text 'List organizations for isolation segm...'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/isol...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve the organizations entitled t...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/isolation_segments/:guid/orga...'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text ', and'
+    Code 'name'
+    Text '.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin\t'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only\t'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor\t'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Auditor\t'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Billing Manager\t'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager\t'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_object.md.erb':
+Heading
+ Text 'The organization object'
+CodeBlock 'Example Organization object\n'
+CodeBlock '<%= yield_content :organization, '/v3...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the organization.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the organization.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'quota'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'The quota applied to the organization.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the organization.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations added to the organization.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/organizations/_update.md.erb':
+Heading
+ Text 'Update an organization'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/orga...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/organizations/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Organization name'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the organization.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the organizati...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'OrgManager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_copy_bits.md.erb':
+Heading
+ Text 'Copy a package'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Paragraph
+ Text 'This endpoint copies the bits of a so...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/packages?source_guid=:guid'
+Heading
+ Text 'Required Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'source_guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'GUID of the source package to copy fr...'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'A relationship to the destination app.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_create.md.erb':
+Heading
+ Text 'Create a package'
+CodeBlock 'Example Request (buildpack app)\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+CodeBlock 'Example Request (docker app)\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/packages'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Type of the package. Valid values are'
+    Code 'bits'
+    Text ','
+    Code 'docker'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'A relationship to an app.'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'Data for package type.'
+   TableCell
+    Text
+    Code '{}'
+Heading
+ Text 'Conditional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.image'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Required when'
+    Code 'type'
+    Text 'is'
+    Code 'docker'
+    Text '. The registry address of the image.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.username'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Optional when'
+    Code 'type'
+    Text 'is'
+    Code 'docker'
+    Text 'and accessing a secured registry.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.password'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Optional when'
+    Code 'type'
+    Text 'is'
+    Code 'docker'
+    Text 'and accessing a secured registry.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the package.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_delete.md':
+Heading
+ Text 'Delete a package'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 Accepted\nLocation: http...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/packages/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_download_bits.md.erb':
+Heading
+ Text 'Download package bits'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 302 Found\n\n<%= yield_conte...'
+Paragraph
+ Text 'This endpoint downloads the bits of a...'
+ HTMLSpan '<br>'
+ Text
+ HTMLSpan '<br>'
+ Text '\nWhen using a remote blobstore, such...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/packages/:guid/download'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_get.md.erb':
+Heading
+ Text 'Get a package'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/packages/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_header.md':
+Heading
+ Text 'Packages'
+Paragraph
+ Text 'A package is an application's 'source...'
+Paragraph
+ Text 'In Cloud Foundry, packages are staged...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_list.md.erb':
+Heading
+ Text 'List packages'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all packages the user has ac...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/packages'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of package guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of package state...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'types'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of package types...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app guids to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space guids t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_list_for_app.md.erb':
+Heading
+ Text 'List packages for an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\n'
+CodeBlock '<%= yield_content :paginated_list_of_...'
+Paragraph
+ Text 'Retrieve packages for an app that the...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/packages'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of package guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of package state...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'types'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of package types...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_object.md.erb':
+Heading
+ Text 'The package object'
+CodeBlock 'Example Package object\n'
+CodeBlock '<%= yield_content :single_bits_packag...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Package type. Valid values are'
+    Code 'bits'
+    Text ','
+    Code 'docker'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'Data for package type.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'State of the package. Valid states are'
+    Code 'AWAITING_UPLOAD'
+    Text ','
+    Code 'PROCESSING_UPLOAD'
+    Text ','
+    Code 'READY'
+    Text ','
+    Code 'FAILED'
+    Text ','
+    Code 'COPYING'
+    Text ','
+    Code 'EXPIRED'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the package.'
+Heading
+ Text 'Bits package'
+Paragraph
+ Text 'A bits package is used to upload sour...'
+ Code 'upload'
+ Text 'link to which a zip file should be u...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Code 'bits'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.error'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'If an error occurs this field will co...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.checksum.type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The checksum type, for example:'
+    Code 'sha256'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.checksum.value'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The checksum value. This will be popu...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'State of the package. Valid states are'
+    Code 'AWAITING_UPLOAD'
+    Text ','
+    Code 'PROCESSING_UPLOAD'
+    Text ','
+    Code 'READY'
+    Text ','
+    Code 'FAILED'
+    Text ','
+    Code 'COPYING'
+    Text ','
+    Code 'EXPIRED'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the package.'
+Heading
+ Text 'Docker package'
+Paragraph
+ Text 'A docker package references a docker ...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Code 'docker'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.image'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The registry address of the image.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.username'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The username for the image's registry.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.password'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The password for the image's registry.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'State of the package. Valid states are'
+    Code 'READY'
+    Text ','
+    Code 'FAILED'
+    Text ','
+    Code 'COPYING'
+    Text ','
+    Code 'EXPIRED'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the package.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_stage.md':
+Heading
+ Text 'Stage a package'
+Paragraph
+ Text 'Staging a package is accomplished by ...'
+ HTMLSpan '<a href=#create-a-build>'
+ Text 'Create a build'
+ HTMLSpan '</a>'
+ Text '.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_update.md.erb':
+Heading
+ Text 'Update a package'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/packages/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the package.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the package.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/packages/_upload_bits.md.erb':
+Heading
+ Text 'Upload package bits'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/pack...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This upload endpoint takes a multi-pa...'
+ Code 'bits'
+ Text '. The request requires either a'
+ Link 'url=https://en.wikipedia.org/wiki/Zip_(file_format'
+  Text '.zip file'
+ Text ') uploaded under the'
+ Code 'bits'
+ Text 'field or a list of'
+ Link 'url=#the-resource-match-object'
+  Text 'resource match objects'
+ Text 'under the'
+ Code 'resources'
+ Text 'field. These field may be used toget...'
+Paragraph
+ Text 'The'
+ Code 'resources'
+ Text 'field in the request accepts the v2 ...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/packages/:guid/upload'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'bits'
+   TableCell
+    Text
+    Emph
+     Text 'form field'
+   TableCell
+    Text 'A binary zip file containing the pack...'
+   TableCell
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'resources'
+   TableCell
+    Text
+    Emph
+     Text 'form field'
+   TableCell
+    Text 'Fingerprints of the application bits ...'
+    Link 'url=#the-resource-match-object'
+     Text 'resource match objects'
+    Text '.'
+   TableCell
+    Text
+    Code '[]'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_get.md.erb':
+Heading
+ Text 'Get a process'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/proc...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/processes/:guid'
+ Text
+ HTMLSpan '<br>'
+ Text '\n'
+ Code 'GET /v3/apps/:guid/processes/:type'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_header.md':
+Heading
+ Text 'Processes'
+Paragraph
+ Text 'Processes define the runnable units o...'
+ Link 'url=#procfiles'
+  Text 'Procfile'
+ Text 'in the application source.'
+Heading
+ Text 'Web process type'
+List 'tight flags=start'
+ ListItem 'flags=start'
+  Paragraph
+   Text 'By default, a newly created app will ...'
+   Code 'web'
+   Text 'process and all other process types ...'
+ ListItem
+  Paragraph
+   Text 'Scale the'
+   Code 'web'
+   Text 'process to zero if it is not require...'
+ ListItem
+  Paragraph
+   Text 'Unless otherwise specified, all route...'
+   Code 'web'
+   Text 'process by default'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_health_check_object.md.erb':
+Heading
+ Text 'The health check object'
+CodeBlock 'Example health check object\n'
+CodeBlock '<%= yield_content :health_check %>\n'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The type of health check to perform. ...'
+    Code 'http'
+    Text ','
+    Code 'port'
+    Text ', and'
+    Code 'process'
+    Text '. Default is'
+    Code 'port'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.timeout'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The duration in seconds that health c...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.invocation_timeout'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The timeout in seconds for individual...'
+    Code 'http'
+    Text 'and'
+    Code 'port'
+    Text 'health checks.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data.endpoint'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The endpoint called to determine if t...'
+    Code 'http'
+    Text 'health checks.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_list.md.erb':
+Heading
+ Text 'List processes'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/proc...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all processes the user has a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/processes'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of process guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'types'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of process types...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app guids to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space guids t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_list_for_app.md.erb':
+Heading
+ Text 'List processes for app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieves all processes belonging to ...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/processes'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of process guids...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'types'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of process types...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_object.md.erb':
+Heading
+ Text 'The process object'
+CodeBlock 'Example Process object\n'
+CodeBlock '<%= yield_content :single_process %>\n'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Process type. A unique identifier for...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'command'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+    Text 'or'
+    Emph
+     Text 'null'
+   TableCell
+    Text 'The command used to start the process...'
+    Emph
+     Text 'null'
+    Text 'to revert to the buildpack-detected ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'instances'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The number of instances to run.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'memory_in_mb'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The memory in MB allocated per instan...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'disk_in_mb'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The disk in MB allocated per instance.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'health_check'
+   TableCell
+    Text
+    Link 'url=#the-health-check-object'
+     Text
+     Emph
+      Text 'health check object'
+   TableCell
+    Text 'The health check to perform on the pr...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'revision'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'The app revision the process is curre...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the process.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the process.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the process.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_scale.md.erb':
+Heading
+ Text 'Scale a process'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/proc...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/processes/:guid/actions/scale'
+ Text
+ HTMLSpan '<br>'
+ Text '\n'
+ Code 'POST /v3/apps/:guid/processes/:type/a...'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'instances'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The number of instances to run.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'memory_in_mb'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The memory in mb allocated per instan...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'disk_in_mb'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The disk in mb allocated per instance.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_stats.md.erb':
+Heading
+ Text 'Get stats for a process'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/proc...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/processes/:guid/stats'
+ Text
+ HTMLSpan '<br>'
+ Text '\n'
+ Code 'GET /v3/apps/:guid/processes/:type/st...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_stats_object.md.erb':
+Heading
+ Text 'The process stats object'
+CodeBlock 'Example process stats object\n'
+CodeBlock '<%= yield_content :process_stats %>\n'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'type'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Process type. A unique identifier for...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'index'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The zero-based index of running insta...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The state of the instance. Valid valu...'
+    Code 'RUNNING'
+    Text ','
+    Code 'CRASHED'
+    Text ','
+    Code 'STARTING'
+    Text ','
+    Code 'DOWN'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'usage.time'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time when the usage was requested.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'usage.cpu'
+   TableCell
+    Text
+    Emph
+     Text 'number'
+   TableCell
+    Text 'The current cpu usage of the instance.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'usage.mem'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The current memory usage of the insta...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'usage.disk'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The current disk usage of the instance.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'host'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The host the instance is running on.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'instance_ports'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'JSON array of port mappings between t...'
+    Code 'external'
+    Text ') and port opened to the running proc...'
+    Code 'internal'
+    Text ').'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'uptime'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The uptime in seconds for the instance.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'mem_quota'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The maximum memory the instance is al...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'disk_quota'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The maximum disk the instance is allo...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'fds_quota'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'The maximum file descriptors the inst...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'isolation_segment'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The current isolation segment that th...'
+    Code 'null'
+    Text 'when the instance is not placed on a...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'details'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Information about errors placing the ...'
+    Code 'null'
+    Text 'if there are no placement errors.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_terminate_instance.md':
+Heading
+ Text 'Terminate a process instance'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/proc...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 204 No Content\n'
+Paragraph
+ Text 'Terminate an instance of a specific p...'
+Paragraph
+ Text 'This allows a user to stop a single m...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/processes/:guid/instances/...'
+ Text
+ HTMLSpan '<br>'
+ Text '\n'
+ Code 'DELETE /v3/apps/:guid/processes/:type...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/processes/_update.md.erb':
+Heading
+ Text 'Update a process'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/proc...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/processes/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'command'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+    Text 'or'
+    Emph
+     Text 'null'
+   TableCell
+    Text 'The command used to start the process...'
+    Emph
+     Text 'null'
+    Text 'to revert to the buildpack-detected ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'health_check'
+   TableCell
+    Text
+    Link 'url=#the-health_check-object'
+     Text '_health'
+     Emph
+      Text 'check object'
+   TableCell
+    Text 'The health check to perform on the pr...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the process.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the process.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/service_instances/_header.md':
+Heading
+ Text 'Service Instances'
+Paragraph
+ Text 'An instantiation of a service offering.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/service_instances/_list.md.erb':
+Heading
+ Text 'List service instances'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/serv...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint retrieves the service i...'
+Paragraph
+ Text 'This includes access granted by servi...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/service_instances'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of service insta...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space guids t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/service_instances/_list_shared_spaces.md.erb':
+Heading
+ Text 'List shared spaces relationship'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/serv...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint lists the spaces that t...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/service_instances/:guid/relat...'
+Heading
+ Text 'Permitted Roles (in the service insta...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/service_instances/_object.md.erb':
+Heading
+ Text 'The service instance object'
+CodeBlock 'Example Service Instance object\n'
+CodeBlock '<%= yield_content :single_service_ins...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the service instance.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the service ins...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'The space the service instance is con...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the service instance.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the service in...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/service_instances/_share_to_space.md.erb':
+Heading
+ Text 'Share a service instance to other spa...'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/serv...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint shares the service inst...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/service_instances/:guid/rela...'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data'
+   TableCell
+    Text
+    Link 'url=#to-many-relationships'
+     Text
+     Emph
+      Text 'to-many relationship'
+   TableCell
+    Text 'Shared space relationships. Each spac...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/service_instances/_unshare_from_space.md.erb':
+Heading
+ Text 'Unshare a service instance from anoth...'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/serv...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 204 No Content\n'
+Paragraph
+ Text 'This endpoint unshares the service in...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/service_instances/:guid/re...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/service_instances/_update.md.erb':
+Heading
+ Text 'Update a service instance'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/serv...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/service_instances/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the service_instance.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the service_in...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/_create.md.erb':
+Heading
+ Text 'Create a space'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/spac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/spaces'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Space name'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'A relationship to an organization.'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the space.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the space.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'OrgManager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/_get_a_space.md.erb':
+Heading
+ Text 'Get a space'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/spac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OKAdmin|\n\nContent-Type...'
+Paragraph
+ Text 'This endpoint retrieves the specified...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/spaces/:guid'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'include'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- Optionally include additional rela...'
+    HTMLSpan '<br>'
+    Text 'Valid value is'
+    Code 'org'
+    Text '.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/_header.md':
+Heading
+ Text 'Spaces'
+Paragraph
+ Text 'Every application and service is scop...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/_list.md.erb':
+Heading
+ Text 'List spaces'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/spac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-type: applic...'
+Paragraph
+ Text 'Retrieve all spaces the user has acce...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/spaces'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space names t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space guids t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text ','
+    Code 'name'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'include'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- Optionally include a list of uniqu...'
+    HTMLSpan '<br>'
+    Text 'Valid value is'
+    Code 'org'
+    Text '.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/_manage_isolation_segment.md.erb':
+Heading
+ Text 'Manage isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/spac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'This endpoint assigns an isolation se...'
+ HTMLSpan '<a href="#entitle-organizations-for-a...'
+ Text 'entitled'
+ HTMLSpan '</a>'
+ Text 'to the space's parent organization.'
+HTMLBlock '<aside class="notice">Apps will not r...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/spaces/:guid/relationships/...'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'data'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'Isolation segment relationship. Apps ...'
+    Code 'null'
+    Text 'to remove the relationship.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/_object.md.erb':
+Heading
+ Text 'The space object'
+CodeBlock 'Example Space object\n'
+CodeBlock '<%= yield_content :space, '/v3/spaces...'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the space.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the space.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization'
+   TableCell
+    Text
+    Link 'url=#to-one-relationships'
+     Text
+     Emph
+      Text 'to-one relationship'
+   TableCell
+    Text 'The organization the space is contain...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the space.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the space.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/_update.md.erb':
+Heading
+ Text 'Update a space'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.space/v3/sp...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/spaces/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'New space name'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the space.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the space.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'OrgManager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'SpaceManager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/spaces/get_assigned_isolation_segment.md.erb':
+Heading
+ Text 'Get assigned isolation segment'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/spac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/spaces/:guid/relationships/is...'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/stacks/_create.md.erb':
+Heading
+ Text 'Create a stack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/stac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 201 Created\nContent-Type: a...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/stacks'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the stack. Must be unique and...'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'description'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Description of the stack. Must no lon...'
+   TableCell
+    Text
+    Code 'null'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the stack.'
+   TableCell
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the stack.'
+   TableCell
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/stacks/_delete.md.erb':
+Heading
+ Text 'Delete a Stack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/stac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 204 No Content\n'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'DELETE /v3/stacks/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/stacks/_get.md.erb':
+Heading
+ Text 'Get a stack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/stac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/stacks/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/stacks/_header.md':
+Heading
+ Text 'Stacks'
+Paragraph
+ Text 'Stacks are the base operating system ...'
+Paragraph
+ Text 'An application's'
+ Link 'url=#lifecycles'
+  Text 'lifecycle'
+ Text 'will specify which stack to execute ...'
+Paragraph
+ Text 'Stacks are not used for apps with a'
+ Link 'url=#docker-lifecycle'
+  Text 'Docker lifecycle'
+ Text '.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/stacks/_list.md.erb':
+Heading
+ Text 'List stacks'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/stac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all stacks.'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/stacks'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app names to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/stacks/_object.md.erb':
+Heading
+ Text 'The stack object'
+CodeBlock 'Example Stack object\n'
+CodeBlock '<%= yield_content :single_stack %>\n'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The name of the stack'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'description'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'The description of the stack'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the stack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the stack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the stack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/stacks/_update.md.erb':
+Heading
+ Text 'Update a stack'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/stac...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/stacks/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the stack.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the stack.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_cancel.md.erb':
+Heading
+ Text 'Cancel a task'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/task...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 Accepted\nContent-Type: ...'
+Paragraph
+ Text 'Cancels a running task.'
+Paragraph
+ Text 'Canceled tasks will initially be in s...'
+ Code 'CANCELING'
+ Text 'and will move to state'
+ Code 'FAILED'
+ Text 'once the cancel request has been pro...'
+Paragraph
+ Text 'Cancel requests are idempotent and wi...'
+Paragraph
+ Text 'Canceling a task that is in'
+ Code 'SUCCEEDED'
+ Text 'or'
+ Code 'FAILED'
+ Text 'state will return an error.'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/tasks/:task_guid/actions/can...'
+ Text
+ HTMLSpan '<br>'
+ Text '\n'
+ Code 'PUT /v3/tasks/:task_guid/cancel'
+ Text
+ Emph
+  Text '(Deprecated)'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_create.md.erb':
+Heading
+ Text 'Create a task'
+CodeBlock 'Example Request with Command\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Request with Template Process\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 202 Accepted\nContent-Type: ...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'POST /v3/apps/:app_guid/tasks'
+Heading
+ Text 'Required Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'command'
+    Text
+    HTMLSpan '<sup>'
+    Text '[1]'
+    HTMLSpan '</sup>'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Command that will be executed.'
+    Strong
+     Text 'NOTE:'
+    Text 'optional if a'
+    Code 'template.process.guid'
+    Text 'is provided'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+   TableCell
+    Text 'Default'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the task.'
+   TableCell
+    Text 'auto-generated'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'disk_in_mb'
+    Text
+    HTMLSpan '<sup>'
+    Text '[1]'
+    HTMLSpan '</sup>'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Amount of disk to allocate for the ta...'
+   TableCell
+    Text 'operator-configured'
+    Code 'default_app_disk_in_mb'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'memory_in_mb'
+    Text
+    HTMLSpan '<sup>'
+    Text '[1]'
+    HTMLSpan '</sup>'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Amount of memory to allocate for the ...'
+   TableCell
+    Text 'operator-configured'
+    Code 'default_app_memory'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'droplet_guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'The guid of the droplet that will be ...'
+   TableCell
+    Text 'the app's current droplet'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'template.process.guid'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'The guid of the process that will be ...'
+   TableCell
+    Text
+    Code 'null'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the package.'
+   TableCell
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the package.'
+   TableCell
+Paragraph
+ Text
+ HTMLSpan '<sup>'
+ Text '1 If not provided, and a'
+ Code 'template.process.guid'
+ Text 'is provided, this field will use the...'
+ HTMLSpan '</sup>'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_get.md.erb':
+Heading
+ Text 'Get a task'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/task...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve a specific task. The'
+ Code 'command'
+ Text 'field may be excluded\nin the respon...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/tasks/:guid'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_header.md':
+Heading
+ Text 'Tasks'
+Paragraph
+ Text 'Tasks are one-off jobs that are inten...'
+Paragraph
+ Text 'Examples of this include database mig...'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_list.md.erb':
+Heading
+ Text 'List tasks'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/task...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve all tasks the user has acces...'
+ Code 'command'
+ Text 'field is excluded in the response.'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/tasks'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of task guids to...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of task names to...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of task states t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'app_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of app guids to ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'space_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of space guids t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'organization_guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of organization ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'All Roles'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_list_for_app.md.erb':
+Heading
+ Text 'List tasks for an app'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/apps...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Paragraph
+ Text 'Retrieve tasks for an app the user ha...'
+ Code 'command'
+ Text 'field may be\nexcluded in the respon...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'GET /v3/apps/:guid/tasks'
+Heading
+ Text 'Query Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of task guids to...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'names'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of task names to...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'states'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma-delimited list of task states t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'sequence_ids'
+   TableCell
+    Text
+    Emph
+     Text 'list of strings'
+   TableCell
+    Text 'Comma delimited list of sequence ids ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Page to display. Valid values are int...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'per_page'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Number of results per page.'
+    HTMLSpan '<br>'
+    Text 'Valid values are 1 through 5000.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'order_by'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Value to sort by. Defaults to ascendi...'
+    Code '-'
+    Text 'to sort descending.'
+    HTMLSpan '<br>'
+    Text 'Valid values are'
+    Code 'created_at'
+    Text ','
+    Code 'updated_at'
+    Text '.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'label_selector'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text
+    Strong
+     Text 'Experimental'
+    Text '- A query string containing a list of'
+    Link 'url=#labels-and-selectors'
+     Text 'label selector'
+    Text 'requirements.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Space Auditor'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Org Manager'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin Read-Only'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Global Auditor'
+   TableCell
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_object.md.erb':
+Heading
+ Text 'The task object'
+CodeBlock 'Example Task object\n'
+CodeBlock '<%= yield_content :single_task %>\n'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'sequence_id'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'User-facing id of the task. This numb...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'name'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Name of the task.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'command'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Command that will be executed. This f...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'disk_in_mb'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Amount of disk to allocate for the ta...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'memory_in_mb'
+   TableCell
+    Text
+    Emph
+     Text 'integer'
+   TableCell
+    Text 'Amount of memory to allocate for the ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'state'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'State of the task. Possible states are'
+    Code 'PENDING'
+    Text ','
+    Code 'RUNNING'
+    Text ','
+    Code 'SUCCEEDED'
+    Text ','
+    Code 'CANCELING'
+    Text ', and'
+    Code 'FAILED'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'droplet_guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'The guid of the droplet that will be ...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'result'
+   TableCell
+    Text
+    Emph
+     Text 'object'
+   TableCell
+    Text 'Results from the task'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'result.failure_reason'
+   TableCell
+    Text
+    Emph
+     Text 'string'
+   TableCell
+    Text 'Null if the task succeeds, contains t...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'guid'
+   TableCell
+    Text
+    Emph
+     Text 'uuid'
+   TableCell
+    Text 'Unique identifier for the task.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'created_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'updated_at'
+   TableCell
+    Text
+    Emph
+     Text 'datetime'
+   TableCell
+    Text 'The time with zone when the object wa...'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'links'
+   TableCell
+    Text
+    Link 'url=#links'
+     Text
+     Emph
+      Text 'links object'
+   TableCell
+    Text 'Links to related resources.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the task.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the task.'
+
+AST of file '/Users/sneal/src/cf-dotnet-sdk-builder/cloud_controller_ng/docs/v3/source/includes/resources/tasks/_update.md.erb':
+Heading
+ Text 'Update a task'
+CodeBlock 'Example Request\n'
+CodeBlock 'curl "https://api.example.org/v3/task...'
+CodeBlock 'Example Response\n'
+CodeBlock 'HTTP/1.1 200 OK\nContent-Type: applic...'
+Heading
+ Text 'Definition'
+Paragraph
+ Text
+ Code 'PATCH /v3/tasks/:guid'
+Heading
+ Text 'Optional Parameters'
+Table
+ TableHeader
+  TableRow
+   TableCell
+    Text 'Name'
+   TableCell
+    Text 'Type'
+   TableCell
+    Text 'Description'
+ TableBody
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.labels'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#labels'
+     Text
+     Emph
+      Text 'label object'
+   TableCell
+    Text 'Labels applied to the task.'
+  TableRow
+   TableCell
+    Text
+    Strong
+     Text 'metadata.annotations'
+    Text
+    Emph
+     Text '(experimental)'
+   TableCell
+    Text
+    Link 'url=#annotations'
+     Text
+     Emph
+      Text 'annotation object'
+   TableCell
+    Text 'Annotations applied to the task.'
+Heading
+ Text 'Permitted Roles'
+Table
+ TableHeader
+  TableRow
+   TableCell
+   TableCell
+ TableBody
+  TableRow
+   TableCell
+    Text 'Space Developer'
+   TableCell
+  TableRow
+   TableCell
+    Text 'Admin'
+   TableCell
+
