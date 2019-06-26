@@ -14,45 +14,50 @@ import (
 type ParamRendererStates int
 
 const (
-	// ParamRendererStateDefault is the default starting state
-	ParamRendererStateDefault ParamRendererStates = iota
+	// ParamRendererStateUnknown is the default starting state
+	ParamRendererStateUnknown ParamRendererStates = iota
 
-	// ParamRendererStateRequiredParametersName - inside required params name cell
-	ParamRendererStateRequiredParametersName
+	// ParamRendererStateName - params name cell
+	ParamRendererStateName
 
-	// ParamRendererStateRequiredParametersType - inside required params type cell
-	ParamRendererStateRequiredParametersType
+	// ParamRendererStateType - params type cell
+	ParamRendererStateType
 
-	// ParamRendererStateRequiredParametersDescription - inside required params description cell
-	ParamRendererStateRequiredParametersDescription
+	// ParamRendererStateDescription - description cell
+	ParamRendererStateDescription
+
+	// ParamRendererStateDefault - param default value cell
+	ParamRendererStateDefault
 )
 
 func (r ParamRendererStates) String() string {
 	switch r {
+	case ParamRendererStateName:
+		return "ParamRendererStateName"
+	case ParamRendererStateType:
+		return "ParamRendererStateType"
+	case ParamRendererStateDescription:
+		return "ParamRendererStateDescription"
 	case ParamRendererStateDefault:
 		return "ParamRendererStateDefault"
-	case ParamRendererStateRequiredParametersName:
-		return "ParamRendererStateRequiredParametersName"
-	case ParamRendererStateRequiredParametersType:
-		return "ParamRendererStateRequiredParametersType"
-	case ParamRendererStateRequiredParametersDescription:
-		return "ParamRendererStateRequiredParametersDescription"
 	}
-
-	return "Unknown"
+	return "ParamRendererStateUnknown"
 }
 
 // ParamRenderer renders required parameters for a single endpoint
 type ParamRenderer struct {
-	state    ParamRendererStates
-	endpoint *service.Endpoint
+	state        ParamRendererStates
+	endpoint     *service.Endpoint
+	currentParam *service.Parameter
+	required     bool
 }
 
 // NewParamRenderer creates a new v3 API required param renderer
-func NewParamRenderer(endpoint *service.Endpoint) *ParamRenderer {
+func NewParamRenderer(endpoint *service.Endpoint, required bool) *ParamRenderer {
 	return &ParamRenderer{
 		endpoint: endpoint,
-		state:    ParamRendererStateDefault,
+		state:    ParamRendererStateUnknown,
+		required: required,
 	}
 }
 
@@ -72,7 +77,7 @@ func (r *ParamRenderer) RenderNode(ignored io.Writer, node ast.Node, entering bo
 	case *ast.Text:
 		w = r.text(node)
 	case *ast.TableRow:
-		w = r.tableRow(node)
+		w = r.tableRow(node, entering)
 	case *ast.TableHeader:
 		w = r.tableHeader(node)
 	case *ast.TableCell:
@@ -82,25 +87,28 @@ func (r *ParamRenderer) RenderNode(ignored io.Writer, node ast.Node, entering bo
 }
 
 func (r *ParamRenderer) text(text *ast.Text) ast.WalkStatus {
-	if r.state == ParamRendererStateRequiredParametersName {
+	if r.state == ParamRendererStateName {
 		v := string(text.Literal)
 		if v != "" {
-			p := service.Parameter{
-				Name: v,
-			}
-			r.endpoint.BodyParameters = append(r.endpoint.BodyParameters, p)
+			r.currentParam.Name = r.currentParam.Name + v
 		}
 	}
-	if r.state == ParamRendererStateRequiredParametersType {
+	if r.state == ParamRendererStateType {
 		v := string(text.Literal)
-		if v != "" {
-			r.endpoint.BodyParameters[len(r.endpoint.BodyParameters)-1].Type = toOpenAPIDataType(v)
+		if v != "" && r.currentParam.Type == "" {
+			r.currentParam.Type = toOpenAPIDataType(v)
 		}
 	}
-	if r.state == ParamRendererStateRequiredParametersDescription {
+	if r.state == ParamRendererStateDescription {
 		v := string(text.Literal)
 		if v != "" {
-			r.endpoint.BodyParameters[len(r.endpoint.BodyParameters)-1].Description = v
+			r.currentParam.Description = r.currentParam.Description + v
+		}
+	}
+	if r.state == ParamRendererStateDefault {
+		v := string(text.Literal)
+		if v != "" {
+			r.currentParam.Default = r.currentParam.Default + v
 		}
 	}
 	return ast.GoToNext
@@ -110,20 +118,28 @@ func (r *ParamRenderer) tableHeader(tableHeader *ast.TableHeader) ast.WalkStatus
 	return ast.SkipChildren
 }
 
-func (r *ParamRenderer) tableRow(tableCell *ast.TableRow) ast.WalkStatus {
-	r.state = ParamRendererStateDefault
+func (r *ParamRenderer) tableRow(tableCell *ast.TableRow, entering bool) ast.WalkStatus {
+	if entering {
+		r.state = ParamRendererStateUnknown
+		r.currentParam = &service.Parameter{
+			Required: r.required,
+		}
+		r.endpoint.BodyParameters = append(r.endpoint.BodyParameters, r.currentParam)
+	}
 	return ast.GoToNext
 }
 
 func (r *ParamRenderer) tableCell(tableCell *ast.TableCell, entering bool) ast.WalkStatus {
 	if entering {
 		switch r.state {
-		case ParamRendererStateDefault:
-			r.state = ParamRendererStateRequiredParametersName
-		case ParamRendererStateRequiredParametersName:
-			r.state = ParamRendererStateRequiredParametersType
-		case ParamRendererStateRequiredParametersType:
-			r.state = ParamRendererStateRequiredParametersDescription
+		case ParamRendererStateUnknown:
+			r.state = ParamRendererStateName
+		case ParamRendererStateName:
+			r.state = ParamRendererStateType
+		case ParamRendererStateType:
+			r.state = ParamRendererStateDescription
+		case ParamRendererStateDescription:
+			r.state = ParamRendererStateDefault
 		}
 	}
 	return ast.GoToNext

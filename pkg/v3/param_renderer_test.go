@@ -26,7 +26,7 @@ Name | Type | Description
 `)
 				table := markdown.Parse(t, parser.NewWithExtensions(parser.CommonExtensions))
 				endpoint = service.NewEndpoint("App", "POST", "/v3/apps")
-				markdown.Render(table, v3.NewParamRenderer(endpoint))
+				markdown.Render(table, v3.NewParamRenderer(endpoint, true))
 			})
 
 			It("contains all params", func() {
@@ -41,6 +41,9 @@ Name | Type | Description
 			It("first param has description", func() {
 				Expect(endpoint.BodyParameters[0].Description).To(Equal("Name of the app."))
 			})
+			It("second param is required", func() {
+				Expect(endpoint.BodyParameters[0].Required).To(BeTrue())
+			})
 			It("second param is named space", func() {
 				Expect(endpoint.BodyParameters[1].Name).To(Equal("space"))
 			})
@@ -49,6 +52,49 @@ Name | Type | Description
 			})
 			It("second param has description", func() {
 				Expect(endpoint.BodyParameters[1].Description).To(Equal("A relationship to a space."))
+			})
+			It("second param is required", func() {
+				Expect(endpoint.BodyParameters[1].Required).To(BeTrue())
+			})
+		})
+	})
+
+	Describe("rendering optional parameters", func() {
+		Context("with name and space params", func() {
+
+			var endpoint *service.Endpoint
+
+			BeforeEach(func() {
+				t := []byte(`
+Name | Type | Description | Default
+---- | ---- | ----------- | -------
+**environment_variables** | _object_ | Environment variables to be used for the App when running. | {}
+**lifecycle** | [_lifecycle object_](#the-lifecycle-object) | Provides the lifecycle object for the application. | [buildpack lifecycle](#buildpack-lifecycle-object)
+**metadata.labels** _(experimental)_| [_label object_](#labels) | Labels applied to the app.
+**metadata.annotations** _(experimental)_ | [_annotation object_](#annotations) | Annotations applied to the app.
+`)
+				table := markdown.Parse(t, parser.NewWithExtensions(parser.CommonExtensions))
+				endpoint = service.NewEndpoint("App", "POST", "/v3/apps")
+				markdown.Render(table, v3.NewParamRenderer(endpoint, false))
+			})
+
+			It("contains all params", func() {
+				Expect(endpoint.BodyParameters).To(HaveLen(4))
+			})
+			It("first param is named name", func() {
+				Expect(endpoint.BodyParameters[0].Name).To(Equal("environment_variables"))
+			})
+			It("first param has type string", func() {
+				Expect(endpoint.BodyParameters[0].Type).To(Equal("object"))
+			})
+			It("first param has description", func() {
+				Expect(endpoint.BodyParameters[0].Description).To(Equal("Environment variables to be used for the App when running."))
+			})
+			It("first param has default", func() {
+				Expect(endpoint.BodyParameters[0].Default).To(Equal("{}"))
+			})
+			It("params are not required", func() {
+				Expect(endpoint.BodyParameters[0].Required).To(BeFalse())
 			})
 		})
 	})

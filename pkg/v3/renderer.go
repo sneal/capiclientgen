@@ -89,7 +89,7 @@ func (r *Renderer) code(node *ast.Code) ast.WalkStatus {
 
 func (r *Renderer) tableBody(tableBody *ast.TableBody, entering bool) ast.WalkStatus {
 	if r.state.Current() == RendererStateRequiredParameters {
-		pr := NewParamRenderer(r.currentEndpoint)
+		pr := NewParamRenderer(r.currentEndpoint, true)
 		markdown.Render(tableBody, pr)
 		return ast.SkipChildren
 	}

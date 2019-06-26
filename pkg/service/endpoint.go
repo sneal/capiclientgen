@@ -7,16 +7,18 @@ type Endpoint struct {
 	Route          string
 	Description    string
 	Explanation    string
-	BodyParameters []Parameter
-	Requests       []Request
+	BodyParameters []*Parameter
+	Requests       []*Request
 }
 
 // Parameter is a querystring param
 type Parameter struct {
 	Name          string
 	Deprecated    bool
+	Required      bool
 	Description   string
 	Type          string
+	Default       string
 	ValidValues   []string
 	ExampleValues []string
 }
@@ -46,7 +48,7 @@ func NewEndpoint(resource, httpMethod, route string) *Endpoint {
 		Resource:       resource,
 		HTTPMethod:     httpMethod,
 		Route:          route,
-		BodyParameters: []Parameter{},
-		Requests:       []Request{},
+		BodyParameters: []*Parameter{},
+		Requests:       []*Request{},
 	}
 }
