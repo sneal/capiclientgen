@@ -13,15 +13,6 @@ const (
 	// RendererStateRequiredParameters - inside the required parameters section
 	RendererStateRequiredParameters
 
-	// RendererStateRequiredParametersName - inside required params name cell
-	RendererStateRequiredParametersName
-
-	// RendererStateRequiredParametersType - inside required params type cell
-	RendererStateRequiredParametersType
-
-	// RendererStateRequiredParametersDescription - inside required params description cell
-	RendererStateRequiredParametersDescription
-
 	// RendererStatePermittedRoles - inside the permitted roles section
 	RendererStatePermittedRoles
 )
@@ -32,12 +23,6 @@ func (r RendererStates) String() string {
 		return "RendererStateStartEndpoint"
 	case RendererStateRequiredParameters:
 		return "RendererStateRequiredParameters"
-	case RendererStateRequiredParametersName:
-		return "RendererStateRequiredParametersName"
-	case RendererStateRequiredParametersType:
-		return "RendererStateRequiredParametersType"
-	case RendererStateRequiredParametersDescription:
-		return "RendererStateRequiredParametersDescription"
 	case RendererStatePermittedRoles:
 		return "RendererStatePermittedRoles"
 	}
@@ -66,11 +51,6 @@ func (rs *RenderStates) SetRendererState(state RendererStates) {
 // Current renderer state
 func (rs *RenderStates) Current() RendererStates {
 	return rs.state
-}
-
-// Next moves to the next state
-func (rs *RenderStates) Next() {
-	rs.state = rs.state + 1
 }
 
 // Reset back to the default state

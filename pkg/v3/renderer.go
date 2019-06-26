@@ -4,6 +4,7 @@ import (
 	"io"
 	"strings"
 
+	"github.com/gomarkdown/markdown"
 	"github.com/gomarkdown/markdown/ast"
 
 	"github.com/cloudfoundry-community/capiclientgen/pkg/service"
@@ -42,16 +43,16 @@ func (r *Renderer) RenderFooter(w io.Writer, ast ast.Node) {
 }
 
 // RenderNode renders a markdown node to HTML
-func (r *Renderer) RenderNode(w io.Writer, node ast.Node, entering bool) ast.WalkStatus {
+func (r *Renderer) RenderNode(ignored io.Writer, node ast.Node, entering bool) (w ast.WalkStatus) {
 	switch node := node.(type) {
 	case *ast.Text:
-		r.text(node)
+		w = r.text(node)
 	case *ast.Code:
-		r.code(node)
-	case *ast.TableCell:
-		r.tableCell(node, entering)
+		w = r.code(node)
+	case *ast.TableBody:
+		w = r.tableBody(node, entering)
 	}
-	return ast.GoToNext
+	return w
 }
 
 // ParsedEndpoints returns all the endpoint data parsed out
@@ -59,7 +60,7 @@ func (r *Renderer) ParsedEndpoints() []*service.Endpoint {
 	return r.endpoints
 }
 
-func (r *Renderer) text(text *ast.Text) {
+func (r *Renderer) text(text *ast.Text) ast.WalkStatus {
 	_, parentIsHeader := text.Parent.(*ast.Heading)
 	if parentIsHeader {
 		switch string(text.Literal) {
@@ -71,30 +72,10 @@ func (r *Renderer) text(text *ast.Text) {
 			r.state.SetRendererState(RendererStatePermittedRoles)
 		}
 	}
-	if r.state.Current() == RendererStateRequiredParametersName {
-		v := string(text.Literal)
-		if v != "" {
-			p := service.Parameter{
-				Name: v,
-			}
-			r.currentEndpoint.BodyParameters = append(r.currentEndpoint.BodyParameters, p)
-		}
-	}
-	if r.state.Current() == RendererStateRequiredParametersType {
-		v := string(text.Literal)
-		if v != "" {
-			r.currentEndpoint.BodyParameters[len(r.currentEndpoint.BodyParameters)-1].Type = toOpenAPIDataType(v)
-		}
-	}
-	if r.state.Current() == RendererStateRequiredParametersDescription {
-		v := string(text.Literal)
-		if v != "" {
-			r.currentEndpoint.BodyParameters[len(r.currentEndpoint.BodyParameters)-1].Description = v
-		}
-	}
+	return ast.GoToNext
 }
 
-func (r *Renderer) code(node *ast.Code) {
+func (r *Renderer) code(node *ast.Code) ast.WalkStatus {
 	_, parentIsPara := node.Parent.(*ast.Paragraph)
 	if parentIsPara && r.state.Current() == RendererStateStartEndpoint {
 		s := strings.Split(string(node.Literal), " ")
@@ -103,43 +84,14 @@ func (r *Renderer) code(node *ast.Code) {
 		r.currentEndpoint = service.NewEndpoint(r.ResourceName, httpMethod, route)
 		r.endpoints = append(r.endpoints, r.currentEndpoint)
 	}
+	return ast.GoToNext
 }
 
-func (r *Renderer) tableCell(tableCell *ast.TableCell, entering bool) {
-	if !entering || !isTableBodyCell(tableCell) {
-		return
+func (r *Renderer) tableBody(tableBody *ast.TableBody, entering bool) ast.WalkStatus {
+	if r.state.Current() == RendererStateRequiredParameters {
+		pr := NewParamRenderer(r.currentEndpoint)
+		markdown.Render(tableBody, pr)
+		return ast.SkipChildren
 	}
-
-	switch r.state.Current() {
-	case RendererStateRequiredParameters:
-		r.state.SetRendererState(RendererStateRequiredParametersName)
-	case RendererStateRequiredParametersName:
-		r.state.SetRendererState(RendererStateRequiredParametersType)
-	case RendererStateRequiredParametersType:
-		r.state.SetRendererState(RendererStateRequiredParametersDescription)
-	}
-}
-
-// Normalize data types to https://swagger.io/docs/specification/data-models/data-types/
-func toOpenAPIDataType(v string) string {
-	switch v {
-	case "obect":
-		fallthrough
-	case "to-one relationship":
-		return "object"
-	case "array":
-		fallthrough
-	case "to-many relationship":
-		return "array"
-	case "string":
-		return "string"
-	case "number":
-		return "number"
-	case "integer":
-		return "integer"
-	case "boolean":
-		return "boolean"
-	default:
-		return "object"
-	}
+	return ast.GoToNext
 }
