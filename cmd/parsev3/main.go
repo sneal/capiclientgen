@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"path/filepath"
 	"strings"
-	"os"
 
 	"github.com/gomarkdown/markdown"
 	"github.com/gomarkdown/markdown/parser"
 
-	"github.com/cloudfoundry-community/capiclientgen/pkg/v3"
+	v3 "github.com/cloudfoundry-community/capiclientgen/pkg/v3"
 )
 
 // Parse the V3 API docs
@@ -41,6 +41,10 @@ func processMarkdownFile(filename string) error {
 	p := parser.NewWithExtensions(exts)
 	doc := markdown.Parse(d, p)
 	markdown.Render(doc, v3ApiRenderer)
+
+	for _, e := range v3ApiRenderer.ParsedEndpoints() {
+		fmt.Println(fmt.Sprintf("%+v", e))
+	}
 
 	// fmt.Printf("AST of file '%s':\n", filename)
 	// ast.PrintWithPrefix(os.Stdout, doc, " ")
@@ -77,4 +81,3 @@ func main() {
 		os.Exit(1)
 	}
 }
-
