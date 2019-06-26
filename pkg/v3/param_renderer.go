@@ -48,7 +48,7 @@ type ParamRenderer struct {
 	endpoint *service.Endpoint
 }
 
-// NewParamRenderer creates a new v3 API renderer
+// NewParamRenderer creates a new v3 API required param renderer
 func NewParamRenderer(endpoint *service.Endpoint) *ParamRenderer {
 	return &ParamRenderer{
 		endpoint: endpoint,
@@ -67,17 +67,21 @@ func (r *ParamRenderer) RenderFooter(w io.Writer, ast ast.Node) {
 }
 
 // RenderNode renders a markdown node to HTML
-func (r *ParamRenderer) RenderNode(w io.Writer, node ast.Node, entering bool) ast.WalkStatus {
+func (r *ParamRenderer) RenderNode(ignored io.Writer, node ast.Node, entering bool) (w ast.WalkStatus) {
 	switch node := node.(type) {
 	case *ast.Text:
-		r.text(node)
+		w = r.text(node)
+	case *ast.TableRow:
+		w = r.tableRow(node)
+	case *ast.TableHeader:
+		w = r.tableHeader(node)
 	case *ast.TableCell:
-		r.tableCell(node, entering)
+		w = r.tableCell(node, entering)
 	}
-	return ast.GoToNext
+	return w
 }
 
-func (r *ParamRenderer) text(text *ast.Text) {
+func (r *ParamRenderer) text(text *ast.Text) ast.WalkStatus {
 	if r.state == ParamRendererStateRequiredParametersName {
 		v := string(text.Literal)
 		if v != "" {
@@ -99,17 +103,30 @@ func (r *ParamRenderer) text(text *ast.Text) {
 			r.endpoint.BodyParameters[len(r.endpoint.BodyParameters)-1].Description = v
 		}
 	}
+	return ast.GoToNext
 }
 
-func (r *ParamRenderer) tableCell(tableCell *ast.TableCell, entering bool) {
-	switch r.state {
-	case ParamRendererStateDefault:
-		r.state = ParamRendererStateRequiredParametersName
-	case ParamRendererStateRequiredParametersName:
-		r.state = ParamRendererStateRequiredParametersType
-	case ParamRendererStateRequiredParametersType:
-		r.state = ParamRendererStateRequiredParametersDescription
+func (r *ParamRenderer) tableHeader(tableHeader *ast.TableHeader) ast.WalkStatus {
+	return ast.SkipChildren
+}
+
+func (r *ParamRenderer) tableRow(tableCell *ast.TableRow) ast.WalkStatus {
+	r.state = ParamRendererStateDefault
+	return ast.GoToNext
+}
+
+func (r *ParamRenderer) tableCell(tableCell *ast.TableCell, entering bool) ast.WalkStatus {
+	if entering {
+		switch r.state {
+		case ParamRendererStateDefault:
+			r.state = ParamRendererStateRequiredParametersName
+		case ParamRendererStateRequiredParametersName:
+			r.state = ParamRendererStateRequiredParametersType
+		case ParamRendererStateRequiredParametersType:
+			r.state = ParamRendererStateRequiredParametersDescription
+		}
 	}
+	return ast.GoToNext
 }
 
 // Normalize data types to https://swagger.io/docs/specification/data-models/data-types/
